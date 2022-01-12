@@ -39,7 +39,7 @@ function App() {
   const addEmployee = (event) => {
     event.preventDefault();
     axios
-    .post("https://git.heroku.com/hr-management-app-server.git/create", {
+    .post("https://hr-management-app-server.herokuapp.com/create", {
       // .post("http://localhost:8000/create", {
         //second or white or value name,age,position etc refer to value in input
         //yellow or key or first name, age, education connected to req.body.name in server
@@ -71,7 +71,7 @@ function App() {
 
   const getEmployees = () => {
     axios
-    .get("https://git.heroku.com/hr-management-app-server.git/employees", {})
+    .get("https://hr-management-app-server.herokuapp.com/employees", {})
       // .get("http://localhost:8000/employees", {})
       .then((result) => {
         console.log(result);
@@ -84,7 +84,7 @@ function App() {
 
   const updateWage = (id) => {
     axios
-    .put("https://git.heroku.com/hr-management-app-server.git/update", { wage: newWage, id: id })
+    .put("https://hr-management-app-server.herokuapp.com/update", { wage: newWage, id: id })
       // .put("http://localhost:8000/update", { wage: newWage, id: id })
       .then((result) => {
         setEmployeeList(
@@ -109,7 +109,7 @@ function App() {
   };
 
   const deleteEmployees=(id)=>{
-    axios.delete(`https://git.heroku.com/hr-management-app-server.git/delete/${id}`)
+    axios.delete(`https://hr-management-app-server.herokuapp.com/delete/${id}`)
     // axios.delete(`http://localhost:8000/delete/${id}`)
     .then((result) => {
       setEmployeeList(
